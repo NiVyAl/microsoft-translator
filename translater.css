@@ -1,0 +1,129 @@
+body {
+    font-family: arial;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    width: 450px;
+    height: 500px;
+    background-color: green;
+    margin: 30px auto;    
+    box-sizing: border-box;
+    box-shadow: 0 0 20px #cccccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.exit {
+    font-size: 80px;
+    font-weight: normal;
+    font-family: n;
+    transform: rotate(45deg);
+    display: inline-block;
+    line-height: 60px;
+    vertical-align: top;
+    float: right;
+    cursor: pointer;
+    letter-spacing: -3px;
+}
+
+.exit:hover {
+    opacity: 0.7;
+}
+
+.head {
+    height: 60px;
+    padding: 20px 30px;
+    position: absolute;
+    width: 450px;
+    box-sizing: border-box;
+    top: 0;
+    z-index: 10;
+}
+
+/* cards */
+
+.content {
+    width: 600%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.5s ease all;
+}
+
+.card {
+    width: 450px;
+    height: 100%;
+    padding: 150px 30px;
+    box-sizing: border-box;
+    float: left;
+}
+
+h2 {
+    opacity: 0.7;
+}
+
+h1::before {
+    content: "New";
+    display: block;
+    font-size: 16px;
+    background-color: #51bc5d;
+    width: 33px;
+    font-weight: normal;
+    padding: 2px 10px;
+    margin-bottom: 10px;
+}
+
+.first {
+    background-color: #253352
+}
+
+.second {
+    background-color: #208f34;
+}
+
+.third {
+    background-color: #1484e1;
+}
+
+/* input */
+
+input {
+    display: none;
+}
+
+.footer {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    font-size: 90px;
+    text-align: center;
+    line-height: 20px;
+}
+
+label {
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+
+#btn-1:checked ~ .footer label[for="btn-1"],
+#btn-2:checked ~ .footer label[for="btn-2"],
+#btn-3:checked ~ .footer label[for="btn-3"]{
+    color: #51bc5d;
+}
+
+#btn-1:checked ~ .content {
+    transform: translateX(0px);
+}
+
+#btn-2:checked ~ .content {
+    transform: translateX(-450px);
+}
+
+#btn-3:checked ~ .content {
+    transform: translateX(-900px);
+}
