@@ -143,7 +143,9 @@ label {
 #btn-1:checked ~ .footer label[for="btn-1"],
 #btn-2:checked ~ .footer label[for="btn-2"],
 #btn-3:checked ~ .footer label[for="btn-3"],
-#btn-4:checked ~ .footer label[for="btn-4"]{
+#btn-4:checked ~ .footer label[for="btn-4"],
+#btn-5:checked ~ .footer label[for="btn-5"],
+#btn-6:checked ~ .footer label[for="btn-6"]{
     color: #51bc5d;
 }
 
@@ -163,6 +165,13 @@ label {
     transform: translateX(-1350px);
 }
 
+#btn-5:checked ~ .content {
+    transform: translateX(-1800px);
+}
+
+#btn-6:checked ~ .content {
+    transform: translateX(-2250px);
+}
 
 /* editor */
 

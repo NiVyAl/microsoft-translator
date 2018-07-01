@@ -12,29 +12,30 @@ var content = document.querySelector('.content');
 var footer = document.querySelector('.footer');
 
 var createCard = function(color, title, text, align) {
-    var card = document.createElement('div');
+    card = document.createElement('div');
     content.appendChild(card);
     card.classList.add('card');
-   // card.classList.add(name);
-    card.backgroundColor = color;
+    card.style.backgroundColor = color;
+    card.style.textAlign = align;
     
     var h1 = document.createElement('h1');
     card.appendChild(h1);
+    h1.innerHTML = '<br>' + title;
     
-    h1.innerHTNL = title;
-    
-    var h2 = card.appendChild('h2');
+    var h2 = document.createElement('h2');
     h2.innerHTML = text;
+    card.appendChild(h2);
     
-    
-    var label = footer.appendChild('label');
-    label.for = 'btn-5';
+    var label = document.createElement('label');
+    label.htmlFor = 'btn-5';
+    footer.appendChild(label);
     label.innerHTML = '-';
 }
 
+/*
 var createElement = function(name, parents, property){
     name = document.createElement(property);
     parents.appendChild(name);
-}
+} */
 
-createCard('#7b4c84', 'hi', 'gfjdkd', 'center');
+createCard('#7b4c84', 'Live conversations', 'Have a live, multilingual conversation in your own languag, across multiple devices.', 'center');
