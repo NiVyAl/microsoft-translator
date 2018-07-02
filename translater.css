@@ -73,7 +73,7 @@ body {
 /* cards */
 
 .content {
-    width: 600%;
+    width: 400%;
     height: 100%;
     z-index: -1;
     transition: 0.5s ease all;
@@ -133,11 +133,15 @@ input {
     font-size: 90px;
     text-align: center;
     line-height: 20px;
+    /* почему-то между созданными в js нет word-spacing, а есть какой-то другой пробел */
+    word-spacing: -25px;
 }
 
 label {
     cursor: pointer;
     transition: 0.5s ease all;
+    /* поэтому пришлось добавить маргин */
+    margin: 0px 10px ;
 }
 
 #btn-1:checked ~ .footer label[for="btn-1"],
