@@ -42,17 +42,28 @@ var createCard = function(color, title, text, align) {
     
     content.style.width = howMany*100 + '%';
     
-    var input = document.createElement('input');
-    cardContainer.insertBefore(input, cardContainer.childNodes[0]) // ставлю input перед всеми элементами в card-container
-    input.type = 'radio';
-    input.name = 'toggle';
-    input.id = 'btn-' + howMany;
+    if (howMany > 1){
+        var input = document.createElement('input');
+        cardContainer.insertBefore(input, cardContainer.childNodes[0]) // ставлю input перед всеми элементами в card-container
+        input.type = 'radio';
+        input.name = 'toggle';
+        input.id = 'btn-' + howMany;
+    }
     
     var label = madeElement(footer, 'label');
     label.htmlFor = 'btn-' + howMany;
     label.innerHTML = '-';
 }
 
+createCard('#253352', 'Cortana Integration', 'Ask Cortana to start or join live conversation', 'left');
+
+createCard('#208f34', 'Windows lnk', 'Write with your mouse, stylus or finger to translate your handwriting into over 60 languages', 'left');
+
 createCard('#7b4c84', 'Live conversations', 'Have a live, multilingual conversation in your own languag, across multiple devices.', 'center');
+
+createCard('#1484e1', 'Image translation', 'Translate the text on any image by selecting from your saved files', 'left');
+
+
+createCard('#1c899c', 'Offline Language Packs', 'Download neural network-powered language packs for offline translation', 'left');
 
 createCard('#16ab89', 'Phrasebooks', 'Use our verified translations and pronunciation guides to help you learn important phrases while traveling', 'center');

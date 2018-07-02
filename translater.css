@@ -102,6 +102,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* все будет в js
 .first {
     background-color: #253352
 }
@@ -117,12 +118,14 @@ body {
 .fouth {
     background-color: #1c899c;
 }
+*/
 
 /* input */
 
 input {
     display: none;
 }
+
 
 .footer {
     position: absolute;
@@ -132,8 +135,8 @@ input {
     bottom: 0;
     font-size: 90px;
     text-align: center;
-    line-height: 20px;
-    /* почему-то между созданными в js нет word-spacing, а есть какой-то другой пробел */
+    line-height: 0px;
+    /* почему-то между созданными в js нет word-spacing, а есть какой-то другой пробел (каждый label созданный в html считаеться отдельным словом, а созданные в js являються отдельными буквави) */
     word-spacing: -25px;
 }
 
@@ -149,7 +152,9 @@ label {
 #btn-3:checked ~ .footer label[for="btn-3"],
 #btn-4:checked ~ .footer label[for="btn-4"],
 #btn-5:checked ~ .footer label[for="btn-5"],
-#btn-6:checked ~ .footer label[for="btn-6"]{
+#btn-6:checked ~ .footer label[for="btn-6"],
+#btn-7:checked ~ .footer label[for="btn-7"],
+#btn-8:checked ~ .footer label[for="btn-8"]{
     color: #51bc5d;
 }
 
@@ -175,6 +180,14 @@ label {
 
 #btn-6:checked ~ .content {
     transform: translateX(-2250px);
+}
+
+#btn-7:checked ~ .content {
+    transform: translateX(-2700px);
+}
+
+#btn-8:checked ~ .content {
+    transform: translateX(-3150px);
 }
 
 /* editor */
