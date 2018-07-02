@@ -11,31 +11,27 @@ buttonExit.addEventListener('click', function(){
 var content = document.querySelector('.content');
 var footer = document.querySelector('.footer');
 
+var madeElement = function(parents, property){
+    var element = document.createElement(property);
+    parents.appendChild(element);
+    return element;
+}
+
 var createCard = function(color, title, text, align) {
-    card = document.createElement('div');
-    content.appendChild(card);
+    card = madeElement(content, 'div');
     card.classList.add('card');
     card.style.backgroundColor = color;
     card.style.textAlign = align;
     
-    var h1 = document.createElement('h1');
-    card.appendChild(h1);
+    var h1 = madeElement(card, 'h1');
     h1.innerHTML = '<br>' + title;
     
-    var h2 = document.createElement('h2');
+    var h2 = madeElement(card, 'h2');
     h2.innerHTML = text;
-    card.appendChild(h2);
     
-    var label = document.createElement('label');
+    var label = madeElement(footer, 'label');
     label.htmlFor = 'btn-5';
-    footer.appendChild(label);
     label.innerHTML = '-';
 }
-
-/*
-var createElement = function(name, parents, property){
-    name = document.createElement(property);
-    parents.appendChild(name);
-} */
 
 createCard('#7b4c84', 'Live conversations', 'Have a live, multilingual conversation in your own languag, across multiple devices.', 'center');
