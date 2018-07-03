@@ -31,12 +31,16 @@ var createCard = function(color, title, text, align) {
     card.style.backgroundColor = color;
     card.style.textAlign = align;
     
+    /*
     var h1 = madeElement(card, 'h1');
     h1.innerHTML = '<br>' + title;
     
     var h2 = madeElement(card, 'h2');
     h2.innerHTML = text;
+    */
     
+    var textContainer = madeElement(card, 'div')
+    textContainer.innerHTML = '<h1><br>' + title + '</h1><h2>' + text + '</h2>';  
     
     var howMany = howmanyCards();
     

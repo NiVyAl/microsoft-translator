@@ -81,10 +81,16 @@ body {
 
 .card {
     width: 450px;
-    height: 100%;
-    padding: 150px 30px;
+    padding: 0px 30px;
     box-sizing: border-box;
     float: left;
+    height: 100%;
+    display: flex; /* центрую тектовые элементы */
+    align-items: center;
+}
+
+.card div {
+    margin-bottom: 50px; /*увеличиваю отступ снизу, чтоб было место кнопке */
 }
 
 .card h2 {
@@ -102,7 +108,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* все будет в js
+/* все будет в js 
 .first {
     background-color: #253352
 }
@@ -118,8 +124,8 @@ body {
 .fouth {
     background-color: #1c899c;
 }
-*/
 
+*/
 /* input */
 
 input {
