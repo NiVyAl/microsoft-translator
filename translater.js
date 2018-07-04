@@ -67,6 +67,7 @@ var tryButton = function() {
     console.log(lastCard);
     var textContainer = lastCard.querySelector('.text-container');
     var button = madeElement(textContainer, 'button');
+    button.classList.add('background');
     button.innerHTML = 'Try it now';
     
 }
