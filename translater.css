@@ -89,7 +89,7 @@ body {
     align-items: center;
 }
 
-.card div {
+.card .text-container {
     margin-bottom: 50px; /*увеличиваю отступ снизу, чтоб было место кнопке */
 }
 
@@ -125,11 +125,54 @@ body {
     background-color: #1c899c;
 }
 
-*/
+
 /* input */
 
 input {
     display: none;
+}
+
+.card button {
+    background-color: white;
+    border: 0;
+    padding: 10px 20px;
+    color: #51bc5d;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    font-size: 18px;
+    outline: 0px;
+}
+
+.card button:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.card button:hover::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: black;
+    opacity: 0.3;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+
+.card button:hover::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    border: 2px solid black;
+    box-sizing: border-box;
 }
 
 

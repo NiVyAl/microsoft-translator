@@ -40,7 +40,8 @@ var createCard = function(color, title, text, align) {
     */
     
     var textContainer = madeElement(card, 'div')
-    textContainer.innerHTML = '<h1><br>' + title + '</h1><h2>' + text + '</h2>';  
+    textContainer.innerHTML = '<h1><br>' + title + '</h1><h2>' + text + '</h2>'; 
+    textContainer.classList.add('text-container');
     
     var howMany = howmanyCards();
     
@@ -57,6 +58,17 @@ var createCard = function(color, title, text, align) {
     var label = madeElement(footer, 'label');
     label.htmlFor = 'btn-' + howMany;
     label.innerHTML = '-';
+    
+}
+
+var tryButton = function() {
+    var cards = document.querySelectorAll('.card');
+    var lastCard = cards[cards.length-1];
+    console.log(lastCard);
+    var textContainer = lastCard.querySelector('.text-container');
+    var button = madeElement(textContainer, 'button');
+    button.innerHTML = 'Try it now';
+    
 }
 
 createCard('#253352', 'Cortana Integration', 'Ask Cortana to start or join live conversation', 'left');
@@ -71,3 +83,5 @@ createCard('#1484e1', 'Image translation', 'Translate the text on any image by s
 createCard('#1c899c', 'Offline Language Packs', 'Download neural network-powered language packs for offline translation', 'left');
 
 createCard('#16ab89', 'Phrasebooks', 'Use our verified translations and pronunciation guides to help you learn important phrases while traveling', 'center');
+
+tryButton();
