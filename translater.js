@@ -14,6 +14,10 @@ var content = document.querySelector('.content');
 var footer = document.querySelector('.footer');
 var cardContainer = document.querySelector('.card-container');
 
+var forward = document.querySelector('.forward');
+var backward = document.querySelector('.backward');
+var allInput = cardContainer.getElementsByTagName('input');
+
 var madeElement = function(parents, property){
     var element = document.createElement(property);
     parents.appendChild(element);
@@ -31,28 +35,21 @@ var createCard = function(color, title, text, align) {
     card.style.backgroundColor = color;
     card.style.textAlign = align;
     
-    /*
-    var h1 = madeElement(card, 'h1');
-    h1.innerHTML = '<br>' + title;
-    
-    var h2 = madeElement(card, 'h2');
-    h2.innerHTML = text;
-    */
-    
     var textContainer = madeElement(card, 'div')
     textContainer.innerHTML = '<h1><br>' + title + '</h1><h2>' + text + '</h2>'; 
     textContainer.classList.add('text-container');
     
     var howMany = howmanyCards();
-    
     content.style.width = howMany*100 + '%';
-    
     if (howMany > 1){
         var input = document.createElement('input');
         cardContainer.insertBefore(input, cardContainer.childNodes[0]) // ставлю input перед всеми элементами в card-container
         input.type = 'radio';
         input.name = 'toggle';
         input.id = 'btn-' + howMany;
+        input.onclick = function(){
+            buttonNext();
+        }
     }
     
     var label = madeElement(footer, 'label');
@@ -64,13 +61,28 @@ var createCard = function(color, title, text, align) {
 var tryButton = function() {
     var cards = document.querySelectorAll('.card');
     var lastCard = cards[cards.length-1];
-    console.log(lastCard);
     var textContainer = lastCard.querySelector('.text-container');
     var button = madeElement(textContainer, 'button');
     button.classList.add('background');
     button.innerHTML = 'Try it now';
     
 }
+
+// buttonNext
+
+var buttonNext = function() {
+    for (var i=0; i < allInput.length; i++){
+        console.log(allInput[i]);
+        if (allInput[i].checked == true){
+            console.log('i: ' + i);
+            console.log(allInput[i].id);
+            console.log(forward);
+            forward.htmlFor = allInput[i-1].id;
+            backward.htmlFor = allInput[i+1].id;
+        };
+    };
+};
+//
 
 createCard('#253352', 'Cortana Integration', 'Ask Cortana to start or join live conversation', 'left');
 
@@ -79,7 +91,6 @@ createCard('#208f34', 'Windows lnk', 'Write with your mouse, stylus or finger to
 createCard('#7b4c84', 'Live conversations', 'Have a live, multilingual conversation in your own languag, across multiple devices.', 'center');
 
 createCard('#1484e1', 'Image translation', 'Translate the text on any image by selecting from your saved files', 'left');
-
 
 createCard('#1c899c', 'Offline Language Packs', 'Download neural network-powered language packs for offline translation', 'left');
 
