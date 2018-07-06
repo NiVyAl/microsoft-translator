@@ -192,6 +192,12 @@ input {
     box-sizing: border-box;
 }
 
+/* в оригинале так, но мне не нравиться
+.next:active {
+    background-color: black;
+}
+*/
+
 .next div {
     width: 30px;
     height: 30px;

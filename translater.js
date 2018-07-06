@@ -16,7 +16,6 @@ var cardContainer = document.querySelector('.card-container');
 
 var forward = document.querySelector('.forward');
 var backward = document.querySelector('.backward');
-var allInput = cardContainer.getElementsByTagName('input');
 
 var madeElement = function(parents, property){
     var element = document.createElement(property);
@@ -48,7 +47,7 @@ var createCard = function(color, title, text, align) {
         input.name = 'toggle';
         input.id = 'btn-' + howMany;
         input.onclick = function(){
-            buttonNext();
+            nextHowMany(howMany);
         }
     }
     
@@ -69,7 +68,15 @@ var tryButton = function() {
 }
 
 // buttonNext
+var nextHowMany = function(kol){
+    console.log('kol ' + kol);
+    var f = kol+1;
+    var b = kol-1;
+    forward.htmlFor = 'btn-' + f;
+    backward.htmlFor = 'btn-' + b;
+}
 
+/* переключение карточек, до этого в цикле проверял все input
 var buttonNext = function() {
     for (var i=0; i < allInput.length; i++){
         console.log(allInput[i]);
@@ -82,7 +89,7 @@ var buttonNext = function() {
         };
     };
 };
-//
+*/
 
 createCard('#253352', 'Cortana Integration', 'Ask Cortana to start or join live conversation', 'left');
 

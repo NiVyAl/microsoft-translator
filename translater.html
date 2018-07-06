@@ -8,7 +8,7 @@
     <body>
         <div class="card-container">
             
-            <input type="radio" name="toggle" id="btn-1" checked>
+            <input type="radio" name="toggle" id="btn-1" onclick="nextHowMany(1)" checked>
             <!--
             <input type="radio" name="toggle" id="btn-2">
             <input type="radio" name="toggle" id="btn-3">
@@ -22,8 +22,8 @@
                 </div>
             </div>
 
-            <label class="forward background next" ><div></div></label>
-            <label class="backward background next" ><div></div></label>
+            <label class="forward background next" for="btn-2"><div></div></label>
+            <label class="backward background next" for="btn-1" ><div></div></label>
             
             <div class="content">
                 <!--
