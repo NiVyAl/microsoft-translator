@@ -1,6 +1,6 @@
 body {
     font-family: "Arial";
-    background-color: white;
+    background-color: #f5f5f5;
     padding: 0;
     margin: 0;
 }
@@ -156,7 +156,7 @@ button {
 
 /* input */
 
-input {
+.card-container input {
     display: none;
 }
 
@@ -291,6 +291,7 @@ input {
     transform: translateX(-3150px);
 }
 
+
 /* editor */
 
 .none {
@@ -301,11 +302,60 @@ input {
     text-align: center;
 }
 
-form {
-    border: 1px solid red;
-    height: 100px;
+.editor-container form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #text {
-    width: 10px;
+    width: 100px;
 }
+
+.btn-off {
+    cursor: pointer;
+}
+
+.card-edit {
+    width: 400px;
+    height: 400px;
+    /border: 1px solid green;
+    box-sizing: border-box;
+    margin: 10px;
+    box-shadow: 0px 0px 2px 0px #34495e;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.color-square {
+    width: 15px;
+    height: 15px;
+    background-color: #253352;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#saveBtn {
+    height: 40px;
+    cursor: pointer;
+}
+
+.card-name {
+    font-size: 20px;
+}
+
+.part:nth-child(3) label { /* непонятно почему третий */
+    line-height: 30px;
+}
+
+/*
+.part:nth-child(3) {
+    border: 1px solid green
+}
+
+.part {
+    border: 1px solid blue;
+} */

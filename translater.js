@@ -69,7 +69,7 @@ var tryButton = function() {
 
 // buttonNext
 var nextHowMany = function(kol){
-    console.log('kol ' + kol);
+    //console.log('kol ' + kol);
     var f = kol+1;
     var b = kol-1;
     forward.htmlFor = 'btn-' + f;
@@ -104,3 +104,20 @@ createCard('#1c899c', 'Offline Language Packs', 'Download neural network-powered
 createCard('#16ab89', 'Phrasebooks', 'Use our verified translations and pronunciation guides to help you learn important phrases while traveling', 'center');
 
 tryButton();
+
+
+// card redactor
+/*
+var text = document.getElementById('text');
+console.log(text.value); */
+
+var form = document.querySelector('form');
+var inputText = document.getElementById('text');
+form.addEventListener('submit', function() {
+    console.log(inputText.value);
+});
+
+var editorOff = function() {
+    cardContainer.classList.remove('none');
+    editorContainer.classList.add('none');
+}

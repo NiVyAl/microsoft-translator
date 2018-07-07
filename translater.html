@@ -6,7 +6,7 @@
         <link href="translater.css" rel="stylesheet">
     </head>
     <body>
-        <div class="card-container">
+        <div class="card-container none">
             
             <input type="radio" name="toggle" id="btn-1" onclick="nextHowMany(1)" checked>
             <!--
@@ -57,7 +57,7 @@
             </div>
             
             <div class="footer">
-<!--
+            <!--
                 <label for="btn-1">-</label>
                 <label for="btn-2">-</label>
                 <label for="btn-3">-</label>
@@ -65,11 +65,113 @@
             </div>
         </div>
         
-        <div class="editor-container none">
+        
+        <div class="editor-container">
             <h1>Редактирование карточек</h1>
-            <form>
-                <input type="text" id="text">
+            <form method="get">
+                <!--
+                <input type="text" id="text" value="">
+                <input type="submit" value="отправить">
+                -->
+                
+                <div class="card-edit">
+                    <p class="card-name">Карточка 1</p>
+                    
+                    <div class="part">
+                        <label for="h1">Заголовок</label>
+                        <input type="text" value="Cortana Integration" id="h1">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="h2">Текст карточки</label>
+                        <textarea rows="3" cols="40" id="h2">Ask Cortana to start or join live conversation</textarea>
+                    </div>
+                    
+                    <div class="part">
+                        <label for="color">цвет <div class="color-square"></div></label>
+                        <input type="text" value="#253352" id="color">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="text-align">Выравнивание текста</label>
+                        <select name="text-align" id="text-align">
+                            <optgroup>
+                                <option value="left">Лево</option>
+                                <option value="right">Право</option>
+                                <option value="center">Центр</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <button id="saveBtn">Сохранить изменения</button>
+                </div>
+                
+                
+                <div class="card-edit">
+                    <p class="card-name">Карточка 2</p>
+                    
+                    <div class="part">
+                        <label for="h1">Заголовок</label>
+                        <input type="text" value="Windows lnk" id="h1">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="h2">Текст карточки</label>
+                        <textarea rows="3" cols="40" id="h2">Write with your mouse, stylus or finger to translate your handwriting into over 60 languages</textarea>
+                    </div>
+                    
+                    <div class="part">
+                        <label for="color">цвет <div class="color-square"></div></label>
+                        <input type="text" value="#208f34" id="color">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="text-align">Выравнивание текста</label>
+                        <select name="text-align" id="text-align">
+                            <optgroup>
+                                <option value="left">Лево</option>
+                                <option value="right">Право</option>
+                                <option value="center">Центр</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <button id="saveBtn">Сохранить изменения</button>
+                </div>
+                
+                <div class="card-edit">
+                    <p class="card-name">Карточка 3</p>
+                    
+                    <div class="part">
+                        <label for="h1">Заголовок</label>
+                        <input type="text" value="Live conversations" id="h1">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="h2">Текст карточки</label>
+                        <textarea rows="3" cols="40" id="h2">Have a live, multilingual conversation in your own languag, across multiple devices.</textarea>
+                    </div>
+                    
+                    <div class="part">
+                        <label for="color">цвет <div class="color-square"></div></label>
+                        <input type="text" value="#7b4c84" id="color">
+                    </div>
+                    
+                    <div class="part">
+                        <label for="text-align">Выравнивание текста</label>
+                        <select name="text-align" id="text-align">
+                            <optgroup>
+                                <option value="left">Лево</option>
+                                <option value="right">Право</option>
+                                <option value="center">Центр</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <button id="saveBtn">Сохранить изменения</button>
+                </div>
             </form>
+            <button onclick="editorOff()" class="btn-off" id="btn-off">Все карточки</button>
         </div>
         
         <script src="translater.js"></script>
