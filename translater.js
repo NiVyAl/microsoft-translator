@@ -29,6 +29,7 @@ var howmanyCards = function() {
 }
 
 var createCard = function(color, title, text, align) {
+    
     card = madeElement(content, 'div');
     card.classList.add('card');
     card.style.backgroundColor = color;
@@ -54,7 +55,8 @@ var createCard = function(color, title, text, align) {
     var label = madeElement(footer, 'label');
     label.htmlFor = 'btn-' + howMany;
     label.innerHTML = '-';
-    
+
+    createEditCard(color, title, text, align, howMany);
 }
 
 var tryButton = function() {
@@ -76,20 +78,69 @@ var nextHowMany = function(kol){
     backward.htmlFor = 'btn-' + b;
 }
 
-/* переключение карточек, до этого в цикле проверял все input
-var buttonNext = function() {
-    for (var i=0; i < allInput.length; i++){
-        console.log(allInput[i]);
-        if (allInput[i].checked == true){
-            console.log('i: ' + i);
-            console.log(allInput[i].id);
-            console.log(forward);
-            forward.htmlFor = allInput[i-1].id;
-            backward.htmlFor = allInput[i+1].id;
-        };
-    };
-};
-*/
+
+var form = document.querySelector('form');
+
+var createEditCard = function(color, title, text, align, howMany) {
+    var cardEdit = madeElement(form, 'div');
+    cardEdit.classList.add('card-edit');
+    
+    var cardName = madeElement(cardEdit, 'p');
+    cardName.classList.add('card-name');
+    cardName.innerHTML = 'Карточка ' + howMany;
+
+    var part = new Array();
+    for (var i=1; i<5; i++){
+        part[i] = madeElement(cardEdit, 'div');
+        part[i].classList.add('part');
+        
+        var label = madeElement(part[i], 'label');
+        
+        if (i==1){
+            label.htmlFor = 'h1' + howMany;
+            label.innerHTML = 'Заголовок';
+            var input = madeElement(part[i], 'input');
+            input.type="text";
+            input.value = title;
+            input.id = 'h1' + howMany;
+        }
+        if (i==2) {
+            label.htmlFor = 'h2' + howMany;
+            label.innerHTML = 'Текст';
+            var textarea = madeElement(part[i], 'textarea');
+            textarea.value = text;
+            textarea.id = 'h2' + howMany;
+        }
+        
+        if (i==3) {
+            label.htmlFor = 'color' + howMany;
+            label.innerHTML = 'цвет';
+            var colorSquare = madeElement(label, 'div');
+            colorSquare.classList.add('color-square');
+            colorSquare.style.backgroundColor = color;
+            var input = madeElement(part[i], 'input');
+            input.type="text";
+            input.value = color;
+            input.id = 'color' + howMany;
+        }
+        
+        if (i==4) {
+            label.htmlFor = 'text-align' + howMany;
+            label.innerHTML = 'Выравнивание текста';
+            var select = madeElement(part[i], 'select');
+            select.id = 'text-align' + howMany;
+            select.innerHTML = '<optgroup>' + 
+                                '<option value="left">Лево</option>' +
+                                '<option value="right">Право</option>' +
+                                '<option value="center">Центр</option>' +
+                            '</optgroup>'
+        }
+    }
+    
+    var saveBtn = madeElement(cardEdit, 'button');
+    saveBtn.id = 'saveBtn';
+    saveBtn.innerHTML = 'Сохранить изменения';
+}
 
 createCard('#253352', 'Cortana Integration', 'Ask Cortana to start or join live conversation', 'left');
 
@@ -111,7 +162,6 @@ tryButton();
 var text = document.getElementById('text');
 console.log(text.value); */
 
-var form = document.querySelector('form');
 var inputText = document.getElementById('text');
 form.addEventListener('submit', function() {
     console.log(inputText.value);
